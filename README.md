@@ -1,6 +1,6 @@
 # MYHUB
 
-Zone 12 egg farming and AFK Egg movement panel. Version 6.1.
+Zone 12 egg farming and AFK Egg movement panel. Version 6.2.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
@@ -12,7 +12,9 @@ For AFK Egg, leave income blank for manual pickup, or enter a minimum income per
 
 Version 6.1 uses the configured tween speed for guardian travel, retries unconfirmed pickups, and verifies both the carried animal and destination after ragdoll recovery. A denied return retries the guardian sequence. Automatic income mode stays armed after delivery until switched off; manual mode finishes after a verified return. Farming switches targets immediately when an egg is no longer live, without waiting for hatch labels.
 
-Validation: source and distribution parse checks and simulated pickup, rollback, recovery, cancellation and reused-model scenarios passed. These changes have not yet completed a live game regression. Server denial, missing targets and respawns can still prevent delivery.
+Version 6.2 starts the return from the carry-attribute replication callback, including when the prompt helper yields. The ragdoll return is briefly stabilized for at most three seconds while ragdolled, then checked after recovery. Guardian travel samples floor heights and rises before elevated terrain; a retry uses the nearest loaded guardian rather than chasing one across the map. Missing floor data pauses travel. Cancellation is checked before retry status/actions.
+
+Validation: source and distribution parse checks and simulated immediate carry handoff, elevated floor, nearest guardian, unloaded floor, pickup, rollback, recovery, cancellation and reused-model scenarios passed. These changes have not yet completed a live game regression. Server denial, missing targets and respawns can still prevent delivery.
 
 Anti-idle stays connected while the panel exists. Drag the title to move the panel. Re-running replaces the previous panel and disconnects its handlers.
 
