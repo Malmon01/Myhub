@@ -1,12 +1,18 @@
 # MYHUB
 
-Zone 12 egg farming and AFK Egg movement panel. Version 6.3.
+Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.4.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
 ```
 
 Select Void, Omega, or Spectral eggs, choose whether Titanic eggs take priority, then enable Auto Farm. Default tween speed is 300 studs/s.
+
+Version 6.4 uses a compact draggable panel with Farm, AFK, Garden and Performance tabs. Movement, Auto Farm and AFK Egg use switches. Egg selection supports multiple checked options. Tween speed supports a slider and direct numeric entry (10–500 studs/s).
+
+Garden: enable Garden mode, select one or more egg types to keep, optionally enter minimum **Max HP** such as `300t`, then enable Auto Farm on the Farm tab. Wrong types and wanted types below the threshold are broken; matching eggs at or above the threshold are retained. Blank Max HP keeps selected types at any size. Normal farming remains unchanged when Garden mode is off. The garden filter uses MaxHealth, not remaining Health or weight. Unknown MaxHealth, invalid input or an empty keep list pauses selection safely. Monitoring covers loaded Zone12 eggs; it does not claim that unloaded locations are complete. AFK Egg can remain armed independently.
+
+Anti-idle remains active while the panel exists. No automatic leave, reconnect, rejoin or server-hop is added. Disconnects, client crashes, server shutdown and kicks cannot be prevented by this script.
 
 Version 6.3 reduces script overhead with event-maintained egg/pickup/income-label indexes, cached raycast filters and character parts, and throttled target/Titanic checks. Egg death and pickup/return confirmation remain checked every frame or through attribute events.
 
