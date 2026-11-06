@@ -1,12 +1,16 @@
 # MYHUB
 
-Zone 12 egg farming and AFK Egg movement panel. Version 6.2.
+Zone 12 egg farming and AFK Egg movement panel. Version 6.3.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
 ```
 
 Select Void, Omega, or Spectral eggs, choose whether Titanic eggs take priority, then enable Auto Farm. Default tween speed is 300 studs/s.
+
+Version 6.3 reduces script overhead with event-maintained egg/pickup/income-label indexes, cached raycast filters and character parts, and throttled target/Titanic checks. Egg death and pickup/return confirmation remain checked every frame or through attribute events.
+
+`Reduce Hatch FX` defaults ON. It suppresses the observed particle-only HatchVFX emitters and hit/reveal highlights, and locally hides egg geometry only while its existing Hatching attribute is true. The toggle and panel unload restore the cosmetic changes. The script does not change rewards, health, hatch timing, animal attributes, carry prompts, collision or game remotes for this feature. Income labels remain readable. The title displays sampled FPS; performance still depends on the game and device.
 
 For AFK Egg, leave income blank for manual pickup, or enter a minimum income per second such as `100b`, `1t`, or `10t`. Automatic selection waits briefly for hatch results and picks the highest eligible displayed income in Zone 12. It pauses farming and uses the original guardian-hit, pickup, and return sequence.
 
