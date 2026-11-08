@@ -1,6 +1,6 @@
 # MYHUB
 
-Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.5.
+Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.6.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
@@ -22,13 +22,13 @@ For AFK Egg, leave income blank for manual pickup, or enter a minimum income per
 
 Auto Shadowgale is available in the AFK tab and requires AFK Egg to be enabled. If a pickup meets the income threshold during selection, it takes priority. Otherwise the nearest eligible Zone 12 Shadowgale can be collected at any size or weight. With blank income, manual pickup and the optional Shadowgale fallback are available. After any verified delivery, AFK Egg switches off and Infinite Jump and Noclip switch on.
 
-AFK travel uses the configured tween speed, retries unconfirmed pickups, and verifies both the carried animal and destination after ragdoll recovery. A denied return retries the guardian sequence. Farming switches targets immediately when an egg is no longer live, without waiting for hatch labels.
+AFK travel targets the guardian for the animal's zone and waits if that guardian is unloaded. The AFK zone configuration currently supports Zone 12. Return travel waits for a stable single-animal carry after pickup and checks the carry and destination again after ragdoll recovery. A denied return retries the same zone's guardian. Farming switches targets immediately when an egg is no longer live, without waiting for hatch labels.
 
-Version 6.2 starts the return from the carry-attribute replication callback, including when the prompt helper yields. The ragdoll return is briefly stabilized for at most three seconds while ragdolled, then checked after recovery. Guardian travel samples floor heights and rises before elevated terrain; a retry uses the nearest loaded guardian rather than chasing one across the map. Missing floor data pauses travel. Cancellation is checked before retry status/actions.
+The ragdoll return is stabilized for up to three seconds during ragdoll and checked again after recovery. Guardian travel samples floor heights and pauses when floor data is unavailable.
 
 Automatic mode does not select an already-held animal for a new transaction. Only static Zone12 egg positions define the eligible pickup area, so a roaming guardian cannot cause a delivered animal to be selected outside the final stage.
 
-Validation: source and distribution parse checks and simulated immediate carry handoff, elevated floor, nearest guardian, unloaded floor, pickup, rollback, recovery, cancellation and reused-model scenarios passed. These changes have not yet completed a live game regression. Server denial, missing targets and respawns can still prevent delivery.
+Simulated checks cover stable carry handoff, guardian zone isolation, unloaded guardians, elevated and missing floors, return rollback, cancellation and reused pickup models. Live delivery verification is pending.
 
 Anti-idle stays connected while the panel exists. Drag the title to move the panel. Re-running replaces the previous panel and disconnects its handlers.
 
