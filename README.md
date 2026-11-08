@@ -1,6 +1,6 @@
 # MYHUB
 
-Zone 12 and Zone 13 egg farming, garden sorting and AFK Egg movement panel. Version 7.1.
+Zone 12 and Zone 13 egg farming, garden sorting and AFK Egg movement panel. Version 7.2.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
@@ -25,6 +25,8 @@ For AFK Egg, leave income blank for manual pickup, or enter a minimum income per
 The MYHUB panel renders above the game HUD. The AFK tab offers Auto Shadowgale in Zone 12 and separate CastleCrab, CastleCroc, and Beholder switches in Zone 13. These targets require AFK Egg to be enabled. If a pickup meets the income threshold during selection, it takes priority. Otherwise the nearest enabled rare target in the selected zone can be collected at any size or weight. With blank income, manual pickup and optional rare targets are available. After any verified delivery, AFK Egg switches off and Infinite Jump and Noclip switch on.
 
 AFK travel targets the guardian for the selected animal's zone and waits if that guardian is unloaded. Both zones use the same AFK return point. Return travel waits for a stable single-animal carry after pickup and checks the carry and destination again after ragdoll recovery. A denied return retries the same zone's guardian. Farming switches targets when an egg is no longer live.
+
+AFK pickup prefers prompts linked directly to the animal. It also matches formatted display names such as Sun Lion and follows the prompt anchor when it is offset from the animal's center.
 
 The ragdoll return is stabilized for up to three seconds during ragdoll and checked again after recovery. Guardian travel samples floor heights and pauses when floor data is unavailable.
 
