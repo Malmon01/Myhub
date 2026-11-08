@@ -1,6 +1,6 @@
 # MYHUB
 
-Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.4.
+Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.5.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
@@ -20,7 +20,9 @@ Version 6.3 reduces script overhead with event-maintained egg/pickup/income-labe
 
 For AFK Egg, leave income blank for manual pickup, or enter a minimum income per second such as `100b`, `1t`, or `10t`. Automatic selection waits briefly for hatch results and picks the highest eligible displayed income in Zone 12. It pauses farming and uses the original guardian-hit, pickup, and return sequence.
 
-Version 6.1 uses the configured tween speed for guardian travel, retries unconfirmed pickups, and verifies both the carried animal and destination after ragdoll recovery. A denied return retries the guardian sequence. Automatic income mode stays armed after delivery until switched off; manual mode finishes after a verified return. Farming switches targets immediately when an egg is no longer live, without waiting for hatch labels.
+Auto Shadowgale is available in the AFK tab and requires AFK Egg to be enabled. If a pickup meets the income threshold during selection, it takes priority. Otherwise the nearest eligible Zone 12 Shadowgale can be collected at any size or weight. With blank income, manual pickup and the optional Shadowgale fallback are available. After any verified delivery, AFK Egg switches off and Infinite Jump and Noclip switch on.
+
+AFK travel uses the configured tween speed, retries unconfirmed pickups, and verifies both the carried animal and destination after ragdoll recovery. A denied return retries the guardian sequence. Farming switches targets immediately when an egg is no longer live, without waiting for hatch labels.
 
 Version 6.2 starts the return from the carry-attribute replication callback, including when the prompt helper yields. The ragdoll return is briefly stabilized for at most three seconds while ragdolled, then checked after recovery. Guardian travel samples floor heights and rises before elevated terrain; a retry uses the nearest loaded guardian rather than chasing one across the map. Missing floor data pauses travel. Cancellation is checked before retry status/actions.
 
