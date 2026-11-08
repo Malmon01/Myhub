@@ -1,6 +1,6 @@
 # MYHUB
 
-Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.8.
+Zone 12 egg farming, garden sorting and AFK Egg movement panel. Version 6.9.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
@@ -8,7 +8,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/m
 
 Select Void, Omega, or Spectral eggs, choose whether Titanic eggs take priority, then enable Auto Farm. Default tween speed is 300 studs/s.
 
-Auto Gem is below Noclip in the Farm tab. Starting Auto Farm enables Auto Gem and checks nearby drops before choosing the next egg. AFK Egg can remain armed while gems are collected. An eligible AFK animal takes priority over gems. Verified AFK delivery switches Auto Gem off.
+Auto Gem is below Noclip in the Farm tab. It uses the shared Tween speed (300 studs/s by default) and selects from loaded Zone 12 drops without a distance cutoff. Starting Auto Farm enables Auto Gem and checks for gems before choosing the next egg. An eligible AFK animal takes priority, and verified AFK delivery switches Auto Gem off.
 
 Version 6.4 uses a compact draggable panel with Farm, AFK, Garden and Performance tabs. Movement, Auto Farm and AFK Egg use switches. Egg selection supports multiple checked options. Tween speed supports a slider and direct numeric entry (10–500 studs/s).
 
