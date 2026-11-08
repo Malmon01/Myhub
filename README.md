@@ -1,12 +1,12 @@
 # MYHUB
 
-Zone 12 and Zone 13 egg farming, garden sorting and AFK Egg movement panel. Version 7.2.
+Zone 12 and Zone 13 egg farming, garden sorting and AFK Egg movement panel. Version 7.3.
 
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Malmon01/Myhub/main/main.lua"))()
 ```
 
-Select Zone 12 or Zone 13, open Egg types to choose which eggs to farm, then enable Auto Farm. The list learns egg names from the selected zone as eggs load. Zone switching saves each zone's egg, rarity, Garden and AFK filters for the current session and stops active automation. A pending AFK pickup must finish or be cancelled first. Enter Zone 13 manually if its eggs or entry floor have not loaded.
+Select Zone 12 or Zone 13, open Egg types to choose which eggs to farm, then enable Auto Farm. The list learns egg names from the selected zone as eggs load. Zone switching saves each zone's egg, rarity, Garden and AFK filters for the current session and stops active automation. A pending AFK pickup must finish or be cancelled first. If Zone 13 is unloaded at spawn, Auto Farm uses the Zone 12 entry point, waits for Zone 13 eggs and floor, and then tweens to Zone 13.
 
 Auto Gem is below Noclip in the Farm tab. It uses the shared Tween speed (300 studs/s by default) and selects loaded drops in the selected zone without a distance cutoff. Starting Auto Farm enables Auto Gem and checks for gems before choosing the next egg. An eligible AFK animal takes priority, and verified AFK delivery switches Auto Gem off.
 
